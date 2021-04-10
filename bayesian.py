@@ -24,6 +24,8 @@ y_predG = gnb.fit(X_train, y_train).predict(X_test)
 print("Gaussian Number of mislabeled points out of a total %d points : %d"
       % (X_test.shape[0], (y_test != y_predG).sum()))
 print("Gaussian Accuracy:",metrics.accuracy_score(y_test, y_predG))
+y_predG = gnb.fit(X_train, y_train).predict_proba(X_test)
+np.savetxt("result30.txt",y_predG)
 
 cnb = CategoricalNB()
 y_predC = cnb.fit(X_train, y_train).predict(X_test)
@@ -46,6 +48,8 @@ y_predG = gnb.fit(X_train, y_train).predict(X_test)
 print("Gaussian Number of mislabeled points out of a total %d points : %d"
       % (X_test.shape[0], (y_test != y_predG).sum()))
 print("Gaussian Accuracy:",metrics.accuracy_score(y_test, y_predG))
+y_predG = gnb.fit(X_train, y_train).predict_proba(X_test)
+np.savetxt("result97.txt",y_predG)
 
 cnb = CategoricalNB()
 y_predC = cnb.fit(X_train, y_train).predict(X_test)
@@ -69,7 +73,7 @@ print("Gaussian Number of mislabeled points out of a total %d points : %d"
       % (X_test.shape[0], (y_test != y_predG).sum()))
 print("Gaussian Accuracy:",metrics.accuracy_score(y_test, y_predG))
 y_predG = gnb.fit(X_train, y_train).predict_proba(X_test)
-np.savetxt("result.txt",y_predG)
+np.savetxt("result98.txt",y_predG)
 
 mnb = MultinomialNB()   #data is not multinomial
 y_predM = mnb.fit(X_train, y_train).predict(X_test)
@@ -87,7 +91,7 @@ print("Gaussian Number of mislabeled points out of a total %d points : %d"
       % (X_test.shape[0], (y_test != y_predG).sum()))
 print("Gaussian Accuracy:",metrics.accuracy_score(y_test, y_predG))
 y_predG = gnb.fit(X_train, y_train).predict_proba(X_test)
-np.savetxt("result.txt",y_predG)
+np.savetxt("result99.txt",y_predG)
 
 mnb = MultinomialNB()   #data is not multinomial
 y_predM = mnb.fit(X_train, y_train).predict(X_test)
